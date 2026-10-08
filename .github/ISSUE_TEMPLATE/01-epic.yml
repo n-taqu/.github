@@ -1,0 +1,53 @@
+name: "Epic"
+description: "複数の Feature をまとめる大きな目標"
+type: "Epic"
+body:
+  - type: textarea
+    id: goal
+    attributes:
+      label: "Goal"
+      description: "達成したいことを書いてください。"
+    validations:
+      required: true
+  - type: textarea
+    id: background
+    attributes:
+      label: "Background"
+      description: "背景と解決したい課題を書いてください。"
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: "Scope"
+      description: "対象とする範囲を書いてください。"
+    validations:
+      required: true
+  - type: textarea
+    id: out-of-scope
+    attributes:
+      label: "Out of Scope"
+      description: "対象外の範囲を書いてください。"
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance-criteria
+    attributes:
+      label: "Acceptance Criteria"
+      description: "完了を判断できる受け入れ条件を書いてください。"
+    validations:
+      required: true
+  - type: textarea
+    id: architecture-adr-links
+    attributes:
+      label: "Architecture・ADR links"
+      description: "設計や ADR のリンクを書いてください。なければ「なし」。"
+    validations:
+      required: true
+  - type: textarea
+    id: user-approval-state
+    attributes:
+      label: "User approval state"
+      description: "承認状態と、承認者・日付を書いてください。"
+    validations:
+      required: true
