@@ -35,9 +35,9 @@ body:
         - PR の本文に `Closes <この Task の Issue の URL>` を入れる
         - CI がある場合は `gh pr checks` で確認し、失敗したら 1 回だけ直す。それでも失敗したら止めて、理由を PR に書く
         - コミットメッセージの末尾に `Co-authored-by: Codex <199175422+chatgpt-codex-connector[bot]@users.noreply.github.com>` を入れる
-        - PR の本文と Issue の完了コメントは、`C:\Users\tky20\Documents\coo-workspace\docs\designs\github-ai-dev\formats.md` の「1. PR の本文」「2. Issue の完了コメント」の書式に従う（署名は `🤖 Generated with Codex`）
+        - PR の本文と Issue の完了コメントは、共通の書式（Task を起動するときに渡す） の「1. PR の本文」「2. Issue の完了コメント」の書式に従う（署名は `🤖 Generated with Codex`）
         - Done 条件を書き換えない
         - gh-issue-sync は競合しても終了コード 0 を返す。出力の `Conflicts` を見て判断する
-        - 作業ディレクトリ: `C:\Users\tky20\development` の下に n-taqu/.github を clone して作業する（clone 先: `C:\Users\tky20\development\n-taqu-github`）
+        - 作業ディレクトリ: ローカルの開発フォルダの下に n-taqu/.github を clone して作業する
     validations:
       required: true
