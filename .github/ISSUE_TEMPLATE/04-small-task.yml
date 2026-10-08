@@ -1,0 +1,28 @@
+name: "Small Task"
+description: "1 日以内で終わる、分解しない作業"
+type: "Small Task"
+body:
+  - type: textarea
+    id: goal
+    attributes:
+      label: "Goal"
+      description: "達成したいことを書いてください。"
+    validations:
+      required: true
+  - type: textarea
+    id: done-condition
+    attributes:
+      label: "Done condition"
+      description: "完了を判断できる条件を書いてください。"
+    validations:
+      required: true
+  - type: dropdown
+    id: work-side
+    attributes:
+      label: "work・side の区分"
+      description: "作業の区分を選んでください。"
+      options:
+        - work
+        - side
+    validations:
+      required: true

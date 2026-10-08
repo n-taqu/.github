@@ -1,0 +1,32 @@
+name: "Bug"
+description: "想定と異なる動作や不具合"
+type: "Bug"
+body:
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: "起きたこと"
+      description: "実際に起きた問題を書いてください。"
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction-steps
+    attributes:
+      label: "再現手順"
+      description: "再現できる手順を番号付きで書いてください。"
+    validations:
+      required: true
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: "期待する動き"
+      description: "本来の動作を書いてください。"
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: "環境"
+      description: "OS、バージョンなど、再現に必要な環境を書いてください。"
+    validations:
+      required: true

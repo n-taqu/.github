@@ -1,0 +1,32 @@
+name: "Feature"
+description: "Epic を実現する機能や改善"
+type: "Feature"
+body:
+  - type: textarea
+    id: goal
+    attributes:
+      label: "Goal"
+      description: "達成したいことを書いてください。"
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance-criteria
+    attributes:
+      label: "Acceptance Criteria"
+      description: "完了を判断できる受け入れ条件を書いてください。"
+    validations:
+      required: true
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: "Dependencies"
+      description: "依存する Issue のリンクを書いてください。なければ「なし」。"
+    validations:
+      required: true
+  - type: textarea
+    id: required-tasks
+    attributes:
+      label: "Required Tasks"
+      description: "必要な Task とその Issue のリンクを書いてください。"
+    validations:
+      required: true

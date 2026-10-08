@@ -1,0 +1,43 @@
+name: "Task"
+description: "Codex が 1 セッションで実行する作業"
+type: "Task"
+body:
+  - type: textarea
+    id: task
+    attributes:
+      label: "Task"
+      description: "実施内容と変更範囲を書いてください。"
+    validations:
+      required: true
+  - type: textarea
+    id: done-conditions
+    attributes:
+      label: "Done conditions"
+      description: "検証コマンドと期待結果を番号付きで書いてください。"
+    validations:
+      required: true
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: "Dependencies"
+      description: "依存する Issue のリンクを書いてください。なければ「なし」。"
+    validations:
+      required: true
+  - type: textarea
+    id: codex-execution-notes
+    attributes:
+      label: "Codex execution notes"
+      description: "この Task の実行手順です。必要な追加指示を書いてください。"
+      value: |
+        - 1 Task = 1 Codex セッション。この Task 以外の変更をしない
+        - リポジトリの作業フォルダは直接使わない。`git worktree add ../<リポジトリ名>-task-<この Task の番号> -b <作業ブランチ> origin/main` で別フォルダを作り、その中で `gh-issue-sync init` と `gh-issue-sync pull` をしてから、この Task・親の Epic を `.issues/` から読む。PR を作ったら `git worktree remove` で片付ける
+        - AI レビュー（Claude Review）は別の段で行う。自分で評価役（Claude など）を呼ばない
+        - PR の本文に `Closes <この Task の Issue の URL>` を入れる
+        - CI がある場合は `gh pr checks` で確認し、失敗したら 1 回だけ直す。それでも失敗したら止めて、理由を PR に書く
+        - コミットメッセージの末尾に `Co-authored-by: Codex <199175422+chatgpt-codex-connector[bot]@users.noreply.github.com>` を入れる
+        - PR の本文と Issue の完了コメントは、`C:\Users\tky20\Documents\coo-workspace\docs\designs\github-ai-dev\formats.md` の「1. PR の本文」「2. Issue の完了コメント」の書式に従う（署名は `🤖 Generated with Codex`）
+        - Done 条件を書き換えない
+        - gh-issue-sync は競合しても終了コード 0 を返す。出力の `Conflicts` を見て判断する
+        - 作業ディレクトリ: `C:\Users\tky20\development` の下に n-taqu/.github を clone して作業する（clone 先: `C:\Users\tky20\development\n-taqu-github`）
+    validations:
+      required: true
